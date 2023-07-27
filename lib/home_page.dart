@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/counter.dart';
+import 'package:my_app/my_drawer.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class HomePage extends StatelessWidget {
@@ -73,7 +74,8 @@ class HomePage extends StatelessWidget {
             const Counter(),
             const Counter(count: 23)
           ],
-        )
+        ),
+        drawer: const MyDrawer(),
       );
   }
 }

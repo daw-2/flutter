@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/database_provider.dart';
 import 'package:my_app/meal.dart';
+import 'package:my_app/my_drawer.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ListPage extends StatefulWidget {
@@ -50,6 +51,7 @@ class ListPageState extends State<ListPage> {
         onPressed: () => Navigator.of(context).pushNamed('/meal/new').then((value) => setState(() {})),
         child: const Icon(Icons.add),
       ),
+      drawer: const MyDrawer(),
     );
   }
 }

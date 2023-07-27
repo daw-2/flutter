@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/add_page.dart';
 import 'package:my_app/home_page.dart';
+import 'package:my_app/list_http.dart';
 import 'package:my_app/list_page.dart';
 import 'package:my_app/meal.dart';
 import 'package:my_app/single_page.dart';
@@ -16,12 +17,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fiorella',
-      initialRoute: '/meals',
+      initialRoute: '/',
       onGenerateRoute: (settings) => Router.generate(settings),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue)
       ),
-      home: const ListPage()
+      home: const HomePage()
     );
   }
 }
@@ -38,6 +39,8 @@ class Router {
           return SinglePage(route.arguments as Meal);
         } else if (route.name == '/meal/new') {
           return const AddPage();
+        } else if (route.name == '/api') {
+          return const ListHttp();
         }
 
         return const HomePage();
