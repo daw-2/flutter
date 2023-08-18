@@ -17,12 +17,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fiorella',
-      initialRoute: '/',
       onGenerateRoute: (settings) => Router.generate(settings),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue)
       ),
-      home: const HomePage()
+      // home: const HomePage(),
+      // ou bien
+      initialRoute: '/',
+      routes: {
+        '/': (_) => const HomePage(),
+        '/meals': (_) => const ListPage(),
+        '/meal/new': (_) => const AddPage(),
+        '/api': (_) => const ListHttp(),
+      },
     );
   }
 }
